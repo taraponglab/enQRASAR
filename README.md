@@ -82,7 +82,7 @@ The result is shown below:
 `ECFP` : Extended circular fingerprint (ECFP)-based Read-Across predictive result \
 `APF`  : Atom Pairs 2D fingerprint (APF)-based Read-Across predictive result \
 `Predicted pIC50` : Stacked ensemble of QSAR, ECFP, APF based prediction (final pIC50 result). High value (pIC50 > 5) indicates skin irritation chemical \
-`Similarity` : Tanimoto-based similarity to the training data set (excluded outliers)
+`Similarity` : Tanimoto-based similarity to the training data set (excluded outliers). A higher similarity value indicates better prediction performance.
 
 # Contributing
 If you'd like to contribute to this project, please fork the repository, make your changes, and submit a pull request.
