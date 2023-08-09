@@ -63,7 +63,7 @@ python main.py --input INPUT_FILE_NAME --output OUTPUT_FILE_NAME
 ```Bash
 python main.py --input ciplofoxacin.xlsx
 ```
-2. Predict skin irritation of Ciprofloxacin and save in result.csv:
+2. (Option) Predict skin irritation of Ciprofloxacin and save in result.csv:
 
 ```Bash
 python main.py --input ciplofoxacin.xlsx --ouput result.csv
