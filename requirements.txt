@@ -1,7 +1,4 @@
 adjustText==0.8
-asttokens @ file:///home/conda/feedstock_root/build_artifacts/asttokens_1670263926556/work
-backcall @ file:///home/conda/feedstock_root/build_artifacts/backcall_1592338393461/work
-backports.functools-lru-cache @ file:///home/conda/feedstock_root/build_artifacts/backports.functools_lru_cache_1618230623929/work
 cloudpickle==2.2.1
 contourpy==1.1.0
 cycler==0.11.0
