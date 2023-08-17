@@ -8,7 +8,7 @@ from rich.table import Table
 
 def main(input: str = typer.Option("example.xlsx", help="Input file name for example example.xlsx"), 
          output: str = typer.Option("output.csv", help="Output file name for example output.csv")):
-    typer.secho('This software calculate the pIC50 of keratinocyte cell viability from Chemical SMILES', fg=typer.colors.WHITE, bold=True)
+    typer.secho('This software calculate the skin irritation using cytotoxicity value (pIC50 and IC50) of chemical against keratinocyte HaCaT cell from Chemical SMILES', fg=typer.colors.WHITE, bold=True)
     typer.secho('Please wait for a while', fg=typer.colors.WHITE, bold=True)
 
     test   = pd.read_excel(os.path.join('input',input), index_col='LigandID')

@@ -143,12 +143,17 @@ def enraqsar(test, n_top=3, weight=3):
     qsar_result['raqsar_test']  = raqsar_test
     qsar_result['y_pred_test']  = y_pred_test
     qsar_result['Similarity']   = similarity_ecfp
+    #convert pic50 to ic50
+    def pIC50_to_IC50(pIC50_values):
+        return (10**(-np.array(pIC50_values)))*1e+9
+    qsar_result['Predicted IC50'] = pIC50_to_IC50(y_pred_test)
     #create dataframe
     raqsar_df = qsar_result['raqsar_test']
     y_pred_df = pd.DataFrame(qsar_result['y_pred_test'], columns=['Predicted pIC50']).set_index(test.index)
     similarity_df = qsar_result['Similarity']
+    ic50_df = pd.DataFrame(qsar_result['Predicted IC50'], columns=['Predicted IC50 (nM)']).set_index(test.index) 
     #combine
-    qsar_result_df = pd.concat([raqsar_df, y_pred_df, similarity_df], axis=1)
+    qsar_result_df = pd.concat([raqsar_df, y_pred_df,ic50_df, similarity_df], axis=1)
     return qsar_result_df
 
 
