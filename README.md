@@ -2,9 +2,11 @@
 
 Author: Tarapong Srisongkram
 
+![TOC](toc.png)
+
 ## Description
 
-This is a simple command-line tool to load and use a pre-trained EnRAQSAR model on your local computer. With this tool, you can make skin irritation predictions directly from the terminal without the need for a GUI or web interface. This software is based on the paper: **Ensemble Read-Across Quantitative Structure-Activity Relationship Algorithm for Predicting Skin Irritation Toxicity (Submitted)**
+This is a simple command-line tool to load and use a pre-trained EnRAQSAR model on your local computer. With this tool, you can make skin irritation predictions directly from the terminal without the need for a GUI or web interface. This software is based on the paper: **Ensemble Read-Across Quantitative Structure-Activity Relationship Algorithm for Predicting Skin Irritation Toxicity (Submitted in Chem Res Tox)**
 
 ## Prerequisites
 
