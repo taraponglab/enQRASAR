@@ -8,7 +8,7 @@ This is a simple command-line tool to load and use a pre-trained EnRAQSAR model 
 
 ## Prerequisites
 
-1. **Python**: Ensure you have Python 3.9 or newer installed on your machine.
+1. **Python**: Ensure you have Python 3.9 or newer installed on your machine. We recommend you install Python via Anaconda package management.
 
 2. **Required Libraries**: Before you start, make sure to install the required Python libraries by running (in terminal):
 
@@ -16,14 +16,13 @@ First locate to the path of this software
 ```bash
     cd path of the software
 ```
-Then install the required Python libraries
-
-```bash
-    pip install -r requirements.txt
-```
-Or if you use anaconda, you can create Conda environment and install the requirement file.
+Then create Conda environment name `raqsar` and then install the requirements.txt file (you can change environment name `raqsar` as you want).
 ```bash
     conda create --name raqsar --file requirements.txt
+```
+Alternatively, you can install requirements.txt file via pip python package management
+```bash
+    pip install -r requirements.txt
 ```
 
 3. **Input File**: This software accepts input as an **Excel file**. The format of Excel should include LigandID as index column, canonical_smiles as the SMILES column.
@@ -38,7 +37,7 @@ The test of the compound is unlimited. You can put the compound with SMILES as m
 ## Usage
 
 ## Basic Command:
-Activate Conda environment
+Activate `raqsar` Conda environment
 ```Bash
 conda activate raqsar
 ```
