@@ -71,9 +71,9 @@ python main.py --input ciplofoxacin.xlsx --ouput result.csv
 
 The result is shown below:
 
-| LigandID  | QSAR | ECFP | APF | Predicted pIC50  | Similarity  |
+| LigandID  | QSAR | ECFP | APF | Predicted pIC50  |Predicted IC50 (nM) | Similarity  |
 |---|---|---|---|---|---|
-|  Ciproflixacin  | 4.03  | 4.06  | 4.38  | 4.01  | 0.64  |
+|  Ciproflixacin  | 4.03  | 4.06  | 4.38  | 4.01  |98196.13  | 0.64  |
 
 # Interpretation
 
