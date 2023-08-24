@@ -21,6 +21,10 @@ Then install the required Python libraries
 ```bash
     pip install -r requirements.txt
 ```
+Or if you use anaconda, you can create Conda environment and install the requirement file.
+```bash
+    conda create --name raqsar --file requirements.txt
+```
 
 3. **Input File**: This software accepts input as an **Excel file**. The format of Excel should include LigandID as index column, canonical_smiles as the SMILES column.
 for example.
@@ -34,6 +38,10 @@ The test of the compound is unlimited. You can put the compound with SMILES as m
 ## Usage
 
 ## Basic Command:
+Activate Conda environment
+```Bash
+conda activate raqsar
+```
 Analyze the chemicals in the `INPUT_FILE_NAME` in the input folder and save in the output folder as CSV file.
 ```Bash
 python main.py --input INPUT_FILE_NAME
