@@ -1,4 +1,4 @@
-# Predict Skin Irritation based on pIC50 using command-line tool application
+# Ensemble Read-Across Quantitative Structure-Activity Relationship Algorithm for Predicting Skin Cytotoxicity
 
 Author: Tarapong Srisongkram
 
@@ -6,7 +6,7 @@ Author: Tarapong Srisongkram
 
 ## Description
 
-This is a simple command-line tool to load and use a pre-trained EnRAQSAR model on your local computer. With this tool, you can make skin irritation predictions directly from the terminal without the need for a GUI or web interface. This software is based on the paper: **Ensemble Read-Across Quantitative Structure-Activity Relationship Algorithm for Predicting Skin Irritation Toxicity (Submitted in Chem Res Tox)**
+This is a simple command-line tool to load and use a pre-trained EnRAQSAR model on your local computer. With this tool, you can make skin irritation predictions directly from the terminal without the need for a GUI or web interface. This software is based on the paper: **Ensemble Read-Across Quantitative Structure-Activity Relationship Algorithm for Predicting Skin Cytotoxicity**
 
 ## Prerequisites
 
@@ -78,19 +78,20 @@ python main.py --input ciplofoxacin.xlsx
 python main.py --input ciplofoxacin.xlsx --ouput result.csv
 ```
 
-The result is shown below:
+The example of result is shown below:
 
-| LigandID  | QSAR | ECFP | APF | Predicted pIC50  |Predicted IC50 (nM) | Similarity  |
-|---|---|---|---|---|---|---|
-|  Ciproflixacin  | 4.03  | 4.06  | 4.38  | 4.01  |98196.13  | 0.64  |
+| LigandID  | ECFP | APF | RF | Lasso | Predicted pIC50  |Predicted IC50 (nM) | Similarity  |
+|---|---|---|---|---|---|---|---|
+|  Ciproflixacin  | 4.03  | 4.06  | 4.38  | 4.01 | 4.01 |98196.13  | 0.64  |
 
 # Interpretation
 
 `LigandID` : Chemical Name \
-`QSAR` : Physicochemical properties-based QSAR predictive result \
 `ECFP` : Extended circular fingerprint (ECFP)-based Read-Across predictive result \
 `APF`  : Atom Pairs 2D fingerprint (APF)-based Read-Across predictive result \
-`Predicted pIC50` : Stacked ensemble of QSAR, ECFP, APF based prediction (final pIC50 result). High value (pIC50 > 5) indicates skin irritation chemical \
+`RF` : Physicochemical properties-based RF-QSAR predictive result \
+`Lasso` : Physicochemical properties-based Lasso-QSAR predictive result \
+`Predicted pIC50` : Stacked ensemble of Lasso-QSAR, RF-QSAR, ECFP-RA, APF-RA based prediction (final pIC50 result). High value (pIC50 > 5) indicates skin irritation chemical \
 `Predicted IC50` : IC50 values calculated from the `Predicted pIC50` by using `pIC50 = -logIC50` equation. \
 `Similarity` : Tanimoto-based similarity to the training data set (excluded outliers). A higher similarity value indicates better prediction performance.
 

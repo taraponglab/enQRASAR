@@ -122,21 +122,25 @@ def enraqsar(test, n_top=3, weight=3):
     scaler = StandardScaler().fit(x_train)
     x_test_scale  = scaler.transform(x_test)
     from joblib import load
-    lasso_cv_reduce = load(os.path.join('models','qsar.joblib'))
+    lasso_cv_reduce = load(os.path.join('models','lasso_cv_reduce.joblib'))
     qsar_test  = lasso_cv_reduce.predict(x_test_scale)
     qsar_test  = pd.DataFrame(qsar_test, columns=['y_pred']).set_index(x_test.index)
+    #rf-qsar
+    rf = load(os.path.join('models','rf_base.joblib'))
+    rf_test  = rf.predict(x_test)
+    rf_test  = pd.DataFrame(rf_test, columns=['y_pred']).set_index(x_test.index)
     ra_ec_test  = readacross_tanimoto_weight(train, y_train, test, n_top, smiles_col='canonical_smiles',weight_power=weight)
     ra_ap_test  = readacross_tanimoto_weight_apf(train, y_train, test, n_top, smiles_col='canonical_smiles',weight_power=weight)
     #get y_pred ra
     ra_ec_test  = ra_ec_test['y_pred']
     ra_ap_test  = ra_ap_test['y_pred']
-    #combine train
-    raqsar_test  = pd.concat([ra_ec_test,  ra_ap_test,  qsar_test], axis=1)
+    #combine test
+    raqsar_test  = pd.concat([ra_ec_test,  ra_ap_test, rf_test, qsar_test], axis=1)
     #ensemble
     rf = load(os.path.join('models','qraqsar.joblib'))
     qsar_result = {}
     y_pred_test  = rf.predict(raqsar_test)
-    raqsar_test.columns = ['QSAR', 'ECFP', 'APF']
+    raqsar_test.columns = ['ECFP', 'APF', 'RF', 'Lasso']
     #similarities
     similarity_ecfp = similarity_tanimono_ecfp(train, test, smiles_col='canonical_smiles')
     #add y values and metrics to dictionary
