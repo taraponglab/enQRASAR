@@ -1,4 +1,4 @@
-# Ensemble Read-Across Quantitative Structure-Activity Relationship Algorithm for Predicting Skin Cytotoxicity
+# Ensemble Quantitative Read-Across Structure-Activity Relationship Algorithm for Predicting Skin Cytotoxicity
 
 Author: Tarapong Srisongkram
 
